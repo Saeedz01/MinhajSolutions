@@ -6,6 +6,7 @@ export default function FeaturedCaseStudies() {
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015",
         industry: "Retail & E-Commerce",
         title: "Enterprise ERP Solution for National Retail Chain",
+        slug: "enterprise-erp-solution-for-national-retail-chain",
         description: "Developed a comprehensive ERP system that streamlined operations across 200+ retail locations, reducing operational costs by 35...",
         duration: "12 months",
         team: "15 developers"
@@ -16,6 +17,7 @@ export default function FeaturedCaseStudies() {
         image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070",
         industry: "Healthcare",
         title: "Mobile Healthcare Platform for Telemedicine",
+        slug: "mobile-healthcare-platform-for-telemedicine",
         description: "Built a comprehensive telemedicine platform with mobile apps for iOS and Android, enabling 50,000+ patients to access...",
         duration: "8 months",
         team: "12 developers"
@@ -26,6 +28,7 @@ export default function FeaturedCaseStudies() {
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072",
         industry: "Manufacturing",
         title: "Cloud Migration for Enterprise Manufacturing",
+        slug: "cloud-migration-for-enterprise-manufacturing",
         description: "Migrated legacy systems to AWS cloud infrastructure, improving system reliability to 99.9% uptime and reducing IT costs by 50...",
         duration: "14 months",
         team: "18 developers"
@@ -94,7 +97,7 @@ export default function FeaturedCaseStudies() {
   
                   {/* CTA Link */}
                   <a 
-                    href="/Portfolio/details"
+                    href={`/Portfolio/${study.slug}`}
                     className="inline-flex items-center gap-2 text-cyan-800 font-semibold hover:gap-3 transition-all duration-200"
                   >
                     View Case Study

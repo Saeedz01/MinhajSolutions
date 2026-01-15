@@ -86,12 +86,6 @@ export default function IndustriesSection() {
                     <p className="text-gray-600 leading-relaxed mb-3">
                       {industry.description}
                     </p>
-                    
-                    {/* See More Text - Shows on Hover with Arrow Animation */}
-                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-1">
-                      <span className="text-cyan-800 font-semibold text-sm group-hover:translate-x-1 transition-transform duration-300">See more</span>
-                      <span className="text-cyan-800 text-sm group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -101,10 +95,12 @@ export default function IndustriesSection() {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="px-10 py-4 bg-cyan-800 text-white font-semibold rounded-lg hover:bg-cyan-800 transition-all duration-300 inline-flex items-center gap-2 text-lg shadow-lg">
+          <a
+          href='/Contact'
+          className="px-10 py-4 bg-cyan-800 text-white font-semibold rounded-lg hover:bg-cyan-800 transition-all duration-300 inline-flex items-center gap-2 text-lg shadow-lg">
             Let's Talk Business
             <span className="text-xl">→</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

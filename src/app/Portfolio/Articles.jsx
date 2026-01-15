@@ -21,6 +21,7 @@ export default function Articles() {
       image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070",
       industry: "Fashion & Retail",
       title: "E-Commerce Platform for Luxury Fashion Brands",
+      slug: "e-commerce-platform-for-luxury-fashion-brands",
       description: "Created a premium e-commerce platform supporting multiple luxury brands, resulting in 250% increase in online sales and 45%...",
       duration: "6 months",
       team: "10 developers"
@@ -31,6 +32,7 @@ export default function Articles() {
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070",
       industry: "Financial Services",
       title: "Mobile Banking Application for FinTech Startup",
+      slug: "mobile-banking-application-for-fintech-startup",
       description: "Developed a secure mobile banking app with biometric authentication, enabling 100,000+ users to manage their finances...",
       duration: "10 months",
       team: "14 developers"
@@ -41,6 +43,7 @@ export default function Articles() {
       image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2074",
       industry: "Technology",
       title: "SaaS Project Management Platform",
+      slug: "saas-project-management-platform",
       description: "Built a comprehensive SaaS project management platform serving 5,000+ teams worldwide, with features for task...",
       duration: "9 months",
       team: "13 developers"
@@ -51,6 +54,7 @@ export default function Articles() {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069",
       industry: "Technology",
       title: "Complete Website Redesign for Corporate Brand",
+      slug: "complete-website-redesign-for-corporate-brand",
       description: "Redesigned and rebuilt corporate website with modern design, resulting in 180% increase in organic traffic and 65%...",
       duration: "4 months",
       team: "6 developers"
@@ -61,6 +65,7 @@ export default function Articles() {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015",
       industry: "Retail & Analytics",
       title: "AI-Powered Analytics Platform for Retail",
+      slug: "ai-powered-analytics-platform-for-retail",
       description: "Developed an AI-powered analytics platform that provides predictive insights for retail operations, increasing sales by 22% and...",
       duration: "11 months",
       team: "16 developers"
@@ -140,7 +145,7 @@ export default function Articles() {
 
                 {/* CTA Link */}
                 <a 
-                  href="/Portfolio/details"
+                  href={`/Portfolio/${study.slug}`}
                   className="inline-flex items-center gap-2 text-cyan-800 font-semibold hover:gap-3 transition-all duration-200"
                 >
                   View Case Study

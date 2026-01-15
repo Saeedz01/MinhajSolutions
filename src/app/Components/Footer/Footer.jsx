@@ -9,9 +9,10 @@ const Footer = () => {
 
                 {/* Company Info */}
                 <div>
-                    <h2 className="text-xl font-semibold mb-2">ServicesHub</h2>
+                    <h2 className="text-xl font-semibold mb-2">MinhajSolutions</h2>
                     <p className="text-sm">
-                        Connect with clients worldwide on the leading marketplace for professional services. Simple registration, powerful tools, unlimited potential </p>
+                    Professional technology services provider offering comprehensive solutions for businesses worldwide 
+                    </p>
                 </div>
 
                 {/* Navigation Links */}

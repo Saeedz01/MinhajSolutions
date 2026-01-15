@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
 import { Phone, ArrowRight, Menu, X, ChevronDown } from "lucide-react";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Header() {
   const router = useRouter();
@@ -20,16 +20,27 @@ export default function Header() {
      }`;
 
   const serviceItems = [
-    "Custom Software & Enterprise",
+    "Custom Software & Enterprise Solutions",
     "Web & Platform Development",
     "Mobile App Development",
     "AI, Data & Intelligent Automation",
     "Smart Academic & Scientific Writing",
   ];
 
+  const slugify = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/&/g, "and") // replace & with and to avoid URL encoding issues
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "") // allow word characters and dashes
+      .replace(/--+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  };
+  
+
   return (
     <nav className="fixed top-0 left-0 w-full z-50 border-b border-gray-200 bg-white font-sans text-sm font-medium">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
@@ -58,7 +69,7 @@ export default function Header() {
                   {serviceItems.map((item, index) => (
                     <a
                       key={index}
-                      href="#"
+                      href={`/Services/${slugify(item)}`}
                       onClick={() => setServicesOpen(false)}
                       className="block px-4 py-2 text-gray-700 hover:bg-cyan-50 hover:text-cyan-900 transition"
                     >
@@ -86,7 +97,7 @@ export default function Header() {
             </a>
 
             <button
-              onClick={() => router.push("/signUp-Login")}
+              onClick={() => router.push("/Contact")}
               className="flex items-center gap-2 bg-cyan-900 text-white px-4 py-2 rounded-lg hover:bg-cyan-800 transition-colors duration-200 font-medium"
             >
               Get Started
@@ -127,7 +138,7 @@ export default function Header() {
                   {serviceItems.map((item, index) => (
                     <a
                       key={index}
-                      href="#"
+                      href={`/Services/${slugify(item)}`}
                       onClick={() => {
                         setServicesOpen(false);
                         setMenuOpen(false);
@@ -141,19 +152,19 @@ export default function Header() {
               )}
             </div>
 
-            <a href="/Pricing" onClick={() => setMenuOpen(false)} className={navLinkClass("/Pricing")}>
+            <a href="/Portfolio" onClick={() => setMenuOpen(false)} className={navLinkClass("/Portfolio")}>
               Portfolio
             </a>
 
-            <a href="#" className="text-gray-800 hover:text-cyan-900">
+            <a href="/Blog" className="text-gray-800 hover:text-cyan-900">
               Blog
             </a>
 
-            <a href="/Dashboard" onClick={() => setMenuOpen(false)} className={navLinkClass("/Dashboard")}>
+            <a href="/About" onClick={() => setMenuOpen(false)} className={navLinkClass("/About")}>
               About
             </a>
 
-            <a href="/Dashboard" onClick={() => setMenuOpen(false)} className={navLinkClass("/Dashboard")}>
+            <a href="/Contact" onClick={() => setMenuOpen(false)} className={navLinkClass("/Contact")}>
               Contact
             </a>
 
@@ -166,7 +177,7 @@ export default function Header() {
             </a>
 
             <button
-              onClick={() => router.push("/signUp-Login")}
+              onClick={() => router.push("/Contact")}
               className="flex items-center gap-2 bg-cyan-900 text-white px-4 py-2 rounded-lg hover:bg-cyan-800 transition-colors duration-200 font-medium w-fit"
             >
               Get Started

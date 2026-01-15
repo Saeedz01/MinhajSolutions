@@ -1,8 +1,11 @@
 'use client';
 
 import { CheckCircle2 } from 'lucide-react';
+// import Router from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function HeroSection() {
+  const router = useRouter();
   return (
     <div className="relative min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -57,7 +60,9 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="px-10 py-4 bg-cyan-800 text-white font-medium rounded-lg hover:bg-cyan-900 transition-colors duration-300 w-full sm:w-auto text-lg flex items-center justify-center gap-2">
+            <button 
+            onClick={()=>router.push('/Contact')}
+            className="px-10 py-4 bg-cyan-800 text-white font-medium rounded-lg cursor-pointer hover:bg-cyan-900 transition-colors duration-300 w-full sm:w-auto text-lg flex items-center justify-center gap-2">
               Let's Talk
               <span className="text-xl">→</span>
             </button>
