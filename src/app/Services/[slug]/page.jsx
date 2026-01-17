@@ -142,9 +142,9 @@ export default function EnterpriseSolutionsPage() {
   }
 
   return (
-    <div className="w-full">
-      {/* Hero Section with Overlay */}
-      <section className="relative min-h-[600px] flex items-center">
+  <div className="w-full">
+    {/* Hero Section with Overlay */}
+  <section className="relative min-h-[600px] flex items-center">
   {/* Background Image */}
   <div
     className="absolute inset-0 bg-cover bg-center"
@@ -155,7 +155,7 @@ export default function EnterpriseSolutionsPage() {
   <div className="absolute inset-0 bg-cyan-900 opacity-80" />
 
   {/* Content */}
-  <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 md:py-28">
+  <div className="relative ml-20 z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 md:py-28">
     {/* Badge */}
     <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 sm:mb-8">
       <div className="w-2 h-2 bg-white rounded-full" />
