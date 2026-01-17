@@ -175,12 +175,14 @@ export default function EnterpriseSolutionsPage() {
     </p>
 
     {/* CTA Button */}
-    <button className="bg-white text-cyan-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 inline-flex items-center gap-2 text-sm sm:text-base">
+    <a 
+    href='/Contact'
+    className="bg-white text-cyan-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 inline-flex items-center gap-2 text-sm sm:text-base">
       {enterpriseData.cta}
       <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
-    </button>
+    </a>
   </div>
 </section>
 
