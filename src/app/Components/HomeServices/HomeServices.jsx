@@ -49,14 +49,13 @@ export default function ServicesSection() {
             <div className="w-2 h-2 bg-cyan-800 rounded-full"></div>
             <span className="text-cyan-800 text-lg">What We Offer</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Our Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+          <p className="text-lg sm:text-lg md:text-lg text-gray-600 max-w-3xl mx-auto mb-6">
             Comprehensive solutions across four key categories to transform your business
           </p>
         </div>
-
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -64,7 +63,7 @@ export default function ServicesSection() {
             <a
               href={`/Services/${service.slug}`}
               key={service.id}
-              className="relative group cursor-pointer overflow-hidden rounded-2xl aspect-[3/4]"
+              className="relative group cursor-pointer overflow-hidden rounded-2xl aspect-[3/4] sm:aspect-[3/4]"
               onMouseEnter={() => setHoveredCard(service.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -80,17 +79,17 @@ export default function ServicesSection() {
               <div className="relative h-full flex flex-col justify-end p-6">
                 {/* Default State - Title */}
                 <div className={`transition-opacity duration-300 ${hoveredCard === service.id ? 'opacity-0' : 'opacity-100'}`}>
-                  <h3 className="text-2xl font-bold text-white leading-tight">
+                  <h3 className="text-2xl sm:text-xl md:text-2xl font-bold text-white leading-tight">
                     {service.title}<br />{service.subtitle}
                   </h3>
                 </div>
 
                 {/* Hover State - Description */}
                 <div className={`absolute inset-0 flex flex-col justify-end p-6 transition-opacity duration-300 ${hoveredCard === service.id ? 'opacity-100' : 'opacity-0'}`}>
-                  <h3 className="text-2xl font-bold text-white leading-tight mb-3">
+                  <h3 className="text-2xl sm:text-xl md:text-2xl font-bold text-white leading-tight mb-3">
                     {service.title}<br />{service.subtitle}
                   </h3>
-                  <p className="text-white/90 text-sm leading-relaxed">
+                  <p className="text-white/90 text-sm sm:text-xs md:text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -101,9 +100,10 @@ export default function ServicesSection() {
 
         {/* CTA Button */}
         <div className="text-center">
-          <a 
-          href='/Contact'
-          className="px-10 py-4 bg-transparent border-2 border-cyan-800 text-cyan-800 font-semibold rounded-lg hover:bg-cyan-800 hover:text-white transition-all duration-300 inline-flex items-center gap-2 text-lg">
+          <a
+            href="/Contact"
+            className="px-8 sm:px-10 py-3 sm:py-4 bg-transparent border-2 border-cyan-800 text-cyan-800 font-semibold rounded-lg hover:bg-cyan-800 hover:text-white transition-all duration-300 inline-flex items-center gap-2 text-lg sm:text-base md:text-lg"
+          >
             Let's Talk
             <span className="text-xl">→</span>
           </a>

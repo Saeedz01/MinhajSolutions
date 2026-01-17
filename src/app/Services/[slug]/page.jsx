@@ -145,44 +145,44 @@ export default function EnterpriseSolutionsPage() {
     <div className="w-full">
       {/* Hero Section with Overlay */}
       <section className="relative min-h-[600px] flex items-center">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${enterpriseData.heroImage}')` }}
-        />
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: `url('${enterpriseData.heroImage}')` }}
+  />
 
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-cyan-900 opacity-80" />
+  {/* Blue Overlay */}
+  <div className="absolute inset-0 bg-cyan-900 opacity-80" />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 ml-16">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
-            <div className="w-2 h-2 bg-white rounded-full" />
-            <span className="text-black text-sm font-bold">
-              <span className='w-2 h-2 bg-black rounded-full inline-block'></span> {enterpriseData.badge}
-            </span>
-          </div>
+  {/* Content */}
+  <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 md:py-28">
+    {/* Badge */}
+    <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 sm:mb-8">
+      <div className="w-2 h-2 bg-white rounded-full" />
+      <span className="text-black text-xs sm:text-sm font-bold flex items-center gap-1">
+        <span className="w-2 h-2 bg-black rounded-full inline-block"></span> {enterpriseData.badge}
+      </span>
+    </div>
 
-          {/* Heading */}
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 max-w-3xl leading-tight">
-            {enterpriseData.heading}
-          </h1>
+    {/* Heading */}
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 max-w-full sm:max-w-3xl leading-tight">
+      {enterpriseData.heading}
+    </h1>
 
-          {/* Description */}
-          <p className="text-xl text-white text-opacity-90 mb-8 max-w-2xl leading-relaxed">
-            {enterpriseData.description}
-          </p>
+    {/* Description */}
+    <p className="text-base sm:text-lg md:text-xl text-white text-opacity-90 mb-6 sm:mb-8 max-w-full sm:max-w-2xl leading-relaxed">
+      {enterpriseData.description}
+    </p>
 
-          {/* CTA Button */}
-          <button className="bg-white text-cyan-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 inline-flex items-center gap-2">
-            {enterpriseData.cta}
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
-        </div>
-      </section>
+    {/* CTA Button */}
+    <button className="bg-white text-cyan-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 inline-flex items-center gap-2 text-sm sm:text-base">
+      {enterpriseData.cta}
+      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </button>
+  </div>
+</section>
 
       {/* Overview Section */}
       <section className="bg-white py-20 px-4">

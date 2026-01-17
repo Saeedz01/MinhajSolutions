@@ -19,71 +19,87 @@ export default function TechStackSection() {
   ];
 
   return (
-    <div className="bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+  
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-cyan-50 text-cyan-800 px-4 py-2 rounded-full mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 bg-cyan-50 text-cyan-800 px-4 py-2 rounded-full mb-4 sm:mb-6">
             <div className="w-2 h-2 bg-cyan-800 rounded-full" />
-            <span className="font-semibold text-sm">Technologies We Use</span>
+            <span className="font-semibold text-xs sm:text-sm">
+              Technologies We Use
+            </span>
           </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+  
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Our Tech Stack
           </h2>
-
-          <p className="text-lg text-gray-600">
+  
+          <p className="text-base sm:text-lg text-gray-600">
             Cutting-edge technologies powering modern solutions
           </p>
         </div>
-
+  
         {/* Rows */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
+  
           {/* Top Row */}
           <div className="relative overflow-hidden">
-            <div className="flex gap-6 scroll-left-animation">
-              {[...topTechnologies, ...topTechnologies, ...topTechnologies].map((tech, index) => (
-                <div
-                  key={`top-${index}`}
-                  className="flex-shrink-0 w-32 h-32 bg-white rounded-2xl border-2 border-gray-200 flex items-center justify-center p-6 hover:border-cyan-800 hover:shadow-lg transition-all duration-300"
-                >
-                  <img
-                    src={tech.logo}
-                    alt={tech.name}
-                    className="w-full h-full object-contain"
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        'https://via.placeholder.com/100x100?text=' + tech.name;
-                    }}
-                  />
-                </div>
-              ))}
+            <div className="flex gap-4 sm:gap-6 scroll-left-animation">
+              {[...topTechnologies, ...topTechnologies, ...topTechnologies].map(
+                (tech, index) => (
+                  <div
+                    key={`top-${index}`}
+                    className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32
+                               bg-white rounded-2xl border-2 border-gray-200
+                               flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6
+                               hover:border-cyan-800 hover:shadow-lg transition-all duration-300"
+                  >
+                    <img
+                      src={tech.logo}
+                      alt={tech.name}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        e.currentTarget.src =
+                          'https://via.placeholder.com/100x100?text=' + tech.name;
+                      }}
+                    />
+                  </div>
+                )
+              )}
             </div>
           </div>
-
+  
           {/* Bottom Row */}
           <div className="relative overflow-hidden">
-            <div className="flex gap-6 scroll-right-animation">
-              {[...bottomTechnologies, ...bottomTechnologies, ...bottomTechnologies].map((tech, index) => (
-                <div
-                  key={`bottom-${index}`}
-                  className="flex-shrink-0 w-32 h-32 bg-white rounded-2xl border-2 border-gray-200 flex items-center justify-center p-6 hover:border-cyan-800 hover:shadow-lg transition-all duration-300"
-                >
-                  <img
-                    src={tech.logo}
-                    alt={tech.name}
-                    className="w-full h-full object-contain"
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        'https://via.placeholder.com/100x100?text=' + tech.name;
-                    }}
-                  />
-                </div>
-              ))}
+            <div className="flex gap-4 sm:gap-6 scroll-right-animation">
+              {[...bottomTechnologies, ...bottomTechnologies, ...bottomTechnologies].map(
+                (tech, index) => (
+                  <div
+                    key={`bottom-${index}`}
+                    className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32
+                               bg-white rounded-2xl border-2 border-gray-200
+                               flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6
+                               hover:border-cyan-800 hover:shadow-lg transition-all duration-300"
+                  >
+                    <img
+                      src={tech.logo}
+                      alt={tech.name}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        e.currentTarget.src =
+                          'https://via.placeholder.com/100x100?text=' + tech.name;
+                      }}
+                    />
+                  </div>
+                )
+              )}
             </div>
           </div>
+  
         </div>
       </div>
     </div>
   );
+  
 }
