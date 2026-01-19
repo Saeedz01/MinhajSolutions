@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from "react";
 
 export default function TechStackSection() {
   const topTechnologies = [
@@ -17,6 +18,13 @@ export default function TechStackSection() {
     { name: 'Firebase', logo: 'https://www.gstatic.com/devrel-devsite/prod/v1084788ea273f4f1d99ef0cbbcc97f012678d883c64443835433de800c09f11e/firebase/images/touchicon-180.png' },
     ...topTechnologies
   ];
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <div className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -59,10 +67,7 @@ export default function TechStackSection() {
                       src={tech.logo}
                       alt={tech.name}
                       className="w-full h-full object-contain"
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          'https://via.placeholder.com/100x100?text=' + tech.name;
-                      }}
+                      onError={(e) => {e.currentTarget.src ='https://via.placeholder.com/100x100?text=' + tech.name;}}
                     />
                   </div>
                 )
@@ -86,10 +91,7 @@ export default function TechStackSection() {
                       src={tech.logo}
                       alt={tech.name}
                       className="w-full h-full object-contain"
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          'https://via.placeholder.com/100x100?text=' + tech.name;
-                      }}
+                      onError={(e) => {e.currentTarget.src ='https://via.placeholder.com/100x100?text=' + tech.name;}}
                     />
                   </div>
                 )
