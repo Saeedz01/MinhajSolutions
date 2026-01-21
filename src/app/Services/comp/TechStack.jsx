@@ -188,14 +188,13 @@ const technologies = TechStacks[stackKey]
         <div
           key={index}
           className="bg-white border-2 border-blue-100 rounded-xl flex items-center justify-center hover:shadow-lg hover:border-black transition-all duration-300 hover:scale-105
-                     aspect-square w-full h-auto sm:h-40 sm:w-auto lg:h-36 lg:w-56 p-4 sm:p-6 lg:p-8 cursor-pointer"
+                    aspect-square w-full h-auto sm:h-40 sm:w-auto lg:h-36 lg:w-56 p-4 sm:p-6 lg:p-8 cursor-pointer"
         >
           <img
             src={tech.logo}
             alt={tech.name}
             className="w-16 sm:w-20 lg:w-20 h-16 sm:h-20 lg:h-20 object-contain"
-            onError={(e) => {
-              e.target.style.display = 'none';
+            onError={(e) => {e.target.style.display = 'none';
               e.target.parentElement.innerHTML = `<div class="text-center text-gray-700 font-semibold text-sm sm:text-base lg:text-sm">${tech.name}</div>`;
             }}
           />
