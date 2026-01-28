@@ -204,7 +204,6 @@ export const serviceDetailsMap = {
     },
     heroImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=900&fit=crop'
   },
-
   'workflow-business-process-automation': {
     title: 'Workflow & Business Process Automation',
     slug: 'workflow-&-business-process-automation',
@@ -960,24 +959,15 @@ export function getServiceDetails(subslug) {
 }
 
 export function getRelatedServicesByBadge(badge, parentServiceSlug) {
-  // Filter services by matching badge
-  const matchingServices = Object.values(serviceDetailsMap).filter(
-    service => service.badge === badge
-  );
-
-  // Shuffle the services randomly
-  const shuffled = matchingServices.sort(() => 0.5 - Math.random());
-
-  // Take 3 services and map them to the exact return shape
-  return shuffled.slice(0, 3).map(service => ({
-    title: service.title,
-    image: service.image,
-    href: `/Services/${parentServiceSlug}/${service.slug}`, // exact href format
-  }));
+  return Object.values(serviceDetailsMap)
+    .filter(service => service.badge === badge)
+    .slice(0, 3) // deterministic
+    .map(service => ({
+      title: service.title,
+      image: service.heroImage, // image field fix
+      href: `/Services/${parentServiceSlug}/${service.slug}`,
+    }));
 }
-
-
-
 
 // Function to generate default service details if not found
 export function generateDefaultServiceDetails(title, description, parentSlug) {
