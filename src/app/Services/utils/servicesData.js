@@ -1,6 +1,4 @@
-// Shared services data utility
-// This file contains all service data used across slug and subslug pages
-
+import { useState, useEffect } from "react";
 // Helper function to convert title to slug
 export function titleToSlug(title) {
   return title
@@ -959,14 +957,42 @@ export function getServiceDetails(subslug) {
 }
 
 export function getRelatedServicesByBadge(badge, parentServiceSlug) {
-  return Object.values(serviceDetailsMap)
+  // Step 1: deterministic server render (first 3 services)
+  const serverServices = Object.values(serviceDetailsMap)
     .filter(service => service.badge === badge)
-    .slice(0, 3) // deterministic
+    .slice(0, 3)
     .map(service => ({
       title: service.title,
-      image: service.heroImage, // image field fix
+      image: service.heroImage,
       href: `/Services/${parentServiceSlug}/${service.slug}`,
     }));
+
+  // State to hold client-side randomized services
+  const [relatedServices, setRelatedServices] = useState(serverServices);
+
+  // Step 2: client-side shuffle (after hydration)
+  useEffect(() => {
+    const services = Object.values(serviceDetailsMap).filter(
+      service => service.badge === badge
+    );
+
+    // Fisher-Yates shuffle
+    for (let i = services.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [services[i], services[j]] = [services[j], services[i]];
+    }
+
+    // Take 2 random services
+    const randomServices = services.slice(0, 3).map(service => ({
+      title: service.title,
+      image: service.heroImage,
+      href: `/Services/${parentServiceSlug}/${service.slug}`,
+    }));
+
+    setRelatedServices(randomServices);
+  }, [badge, parentServiceSlug]);
+
+  return relatedServices;
 }
 
 // Function to generate default service details if not found
