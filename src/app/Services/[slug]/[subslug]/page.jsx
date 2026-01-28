@@ -9,7 +9,8 @@ import {
   getParentServiceTitle, 
   getParentServiceBadge,
   getServiceDetails,
-  generateDefaultServiceDetails
+  generateDefaultServiceDetails,
+  getRelatedServicesByBadge,
 } from '../../utils/servicesData';
 import CTASection from '@/app/Components/CTA/CTAsec';
 
@@ -63,25 +64,27 @@ export default function ServiceSubCategoryPage() {
         'Pop-up or mobile teams needing offline capability',
       ];
 
-  const relatedServices = serviceData.relatedServices && serviceData.relatedServices.length > 0
-    ? serviceData.relatedServices
-    : [
-        {
-          title: 'Custom Web-Based Business Systems',
-          image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800',
-          href: `/Services/${parentServiceSlug}/custom-web-based-business-systems`,
-        },
-        {
-          title: 'Enterprise-Grade Software Development',
-          image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800',
-          href: `/Services/${parentServiceSlug}/enterprise-grade-software-development`,
-        },
-        {
-          title: 'ERP System Design & Implementation',
-          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-          href: `/Services/${parentServiceSlug}/erp-system-design-implementation`,
-        },
-      ];
+      const relatedServices = getRelatedServicesByBadge(serviceData.badge,parentServiceSlug)
+      // console.log(relatedServices);
+  // const relatedServices = serviceData.relatedServices && serviceData.relatedServices.length > 0
+    // ? serviceData.relatedServices
+    // : [
+    //     {
+    //       title: 'Custom Web-Based Business Systems',
+    //       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800',
+    //       href: `/Services/${parentServiceSlug}/custom-web-based-business-systems`,
+    //     },
+    //     {
+    //       title: 'Enterprise-Grade Software Development',
+    //       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800',
+    //       href: `/Services/${parentServiceSlug}/enterprise-grade-software-development`,
+    //     },
+    //     {
+    //       title: 'ERP System Design & Implementation',
+    //       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+    //       href: `/Services/${parentServiceSlug}/erp-system-design-implementation`,
+    //     },
+    //   ];
 
   return (
     <div className="w-full">
