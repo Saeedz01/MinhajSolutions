@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-// Helper function to convert title to slug
+
+
 export function titleToSlug(title) {
   return title
     .toLowerCase()
@@ -61,7 +62,6 @@ export function getParentServiceBadge(slug) {
 }
 
 // Comprehensive each service details mapping in subslug
-// Maps service titles (from servicesGrid) to their detailed subslug page data
 export const serviceDetailsMap = {
   // Custom Software & Enterprise Solutions
   'custom-web-based-business-systems': {
