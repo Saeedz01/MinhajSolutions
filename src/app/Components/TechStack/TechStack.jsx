@@ -15,7 +15,7 @@ export default function TechStackSection() {
   ];
 
   const bottomTechnologies = [
-    { name: 'Firebase', logo: 'https://www.gstatic.com/devrel-devsite/prod/v1084788ea273f4f1d99ef0cbbcc97f012678d883c64443835433de800c09f11e/firebase/images/touchicon-180.png' },
+    { name: 'Firebase', logo: 'https://cdn.worldvectorlogo.com/logos/firebase-1.svg' },
     ...topTechnologies
   ];
   const [mounted, setMounted] = useState(false);
