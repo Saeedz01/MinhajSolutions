@@ -17,7 +17,7 @@ export default function Home() {
     <DeliveryPartnerSection/>
     <TrustedStatsSection/>
     <ProvenProcessSection/>
-    // <TechStackSection/>
+    <TechStackSection/>
     <TestimonialsSection/>
     <CTASection/>
     </>
